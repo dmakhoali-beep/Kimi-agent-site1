@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ivy Africa | Technology Solutions & Certifications</title>
+<meta name="description" content="Ivy Africa — 100% Black Owned BEE Level 1 technology solutions and certification training for Southern Africa since 2016.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root { --green:#3db54b; --green-light:#77cb81; --navy:#14487b; --orange:#ee8022; --orange-light:#f5a35a; --white:#fff; --off-white:#f8fafc; --gray-100:#f1f5f9; --gray-200:#e2e8f0; --gray-400:#94a3b8; --gray-600:#475569; --gray-800:#1e293b; --expo:cubic-bezier(0.16,1,0.3,1); }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter',sans-serif; background:var(--white); color:var(--gray-800); line-height:1.6; }
+.top-bar { position:fixed; top:0; left:0; right:0; height:40px; background:var(--navy); z-index:1001; display:flex; align-items:center; justify-content:space-between; padding:0 3rem; font-size:0.75rem; }
+.top-bar a { color:var(--gray-400); text-decoration:none; display:flex; align-items:center; gap:0.4rem; }
+.top-bar a:hover { color:var(--white); }
+.top-bar-left { display:flex; align-items:center; gap:1rem; }
+.header { position:fixed; top:40px; left:0; right:0; height:80px; background:transparent; z-index:1000; display:flex; align-items:center; justify-content:space-between; padding:0 3rem; transition:all 0.5s var(--expo); }
+.header.scrolled { top:0; height:64px; background:rgba(20,72,123,0.95); backdrop-filter:blur(20px); }
+.logo { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
+.logo-text { font-size:1.5rem; font-weight:700; color:var(--white); }
+.nav { display:flex; align-items:center; gap:2.5rem; }
+.nav-link { color:var(--white); text-decoration:none; font-size:0.875rem; font-weight:500; }
+.nav-link:hover { color:var(--green-light); }
+.cta-btn { background:var(--green); color:var(--white); padding:0.6rem 1.5rem; border-radius:100px; text-decoration:none; font-size:0.875rem; font-weight:600; display:inline-block; }
+.cta-btn:hover { background:var(--green-light); }
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+.hamburger span { width:24px; height:2px; background:var(--white); }
+@media(max-width:1024px){ .hamburger{display:flex;} .nav{display:none;} .header,.top-bar{padding:0 1.5rem;} }
+@media(max-width:768px){ .top-bar{display:none;} .header{top:0;} }
+
+.fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.8s var(--expo), transform 0.8s var(--expo); }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+.hero { min-height:88vh; background:var(--navy); position:relative; display:flex; align-items:center; padding:160px 3rem 80px; overflow:hidden; }
+.hero::before { content:''; position:absolute; top:-20%; right:-10%; width:60%; height:80%; background:radial-gradient(circle, rgba(61,181,75,0.18) 0%, transparent 65%); }
+.hero::after { content:''; position:absolute; bottom:-30%; left:-10%; width:50%; height:70%; background:radial-gradient(circle, rgba(238,128,34,0.14) 0%, transparent 65%); }
+.hero-inner { max-width:1200px; margin:0 auto; position:relative; z-index:2; }
+.hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(61,181,75,0.15); border:1px solid rgba(61,181,75,0.4); color:var(--green-light); padding:0.4rem 1rem; border-radius:100px; font-size:0.8rem; font-weight:600; margin-bottom:1.5rem; }
+.hero h1 { font-size:clamp(2.2rem,5vw,3.6rem); font-weight:800; color:var(--white); line-height:1.15; margin-bottom:1.25rem; max-width:760px; }
+.hero h1 span { color:var(--green-light); }
+.hero p { font-size:1.1rem; color:var(--gray-400); max-width:620px; margin-bottom:2.25rem; }
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+.btn-outline { border:1.5px solid rgba(255,255,255,0.35); color:var(--white); padding:0.6rem 1.5rem; border-radius:100px; text-decoration:none; font-size:0.875rem; font-weight:600; }
+.btn-outline:hover { border-color:var(--green-light); color:var(--green-light); }
+
+.stats { background:var(--white); padding:3.5rem 3rem; }
+.stats-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; text-align:center; }
+.stat-num { font-size:2.4rem; font-weight:800; color:var(--navy); }
+.stat-num span { color:var(--green); }
+.stat-label { font-size:0.85rem; color:var(--gray-600); font-weight:500; }
+@media(max-width:900px){ .stats-grid{grid-template-columns:repeat(2,1fr);} }
+
+.section { padding:5rem 3rem; }
+.section.alt { background:var(--off-white); }
+.section-inner { max-width:1200px; margin:0 auto; }
+.section-tag { display:inline-block; background:rgba(61,181,75,0.12); color:var(--green); font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:0.35rem 0.9rem; border-radius:100px; margin-bottom:1rem; }
+.section h2 { font-size:clamp(1.7rem,3.5vw,2.4rem); font-weight:800; color:var(--navy); margin-bottom:0.75rem; }
+.section-sub { color:var(--gray-600); max-width:640px; margin-bottom:3rem; }
+
+.course-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:1.5rem; }
+.course-card { background:var(--white); border:1px solid var(--gray-200); border-radius:18px; padding:1.75rem; text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:all 0.4s var(--expo); position:relative; overflow:hidden; }
+.course-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--green),var(--orange)); transform:scaleX(0); transform-origin:left; transition:transform 0.4s var(--expo); }
+.course-card:hover { transform:translateY(-6px); box-shadow:0 25px 50px -12px rgba(20,72,123,0.18); border-color:transparent; }
+.course-card:hover::before { transform:scaleX(1); }
+.course-vendor { font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
+.course-card h3 { font-size:1.15rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem; }
+.course-card p { font-size:0.875rem; color:var(--gray-600); flex:1; margin-bottom:1.25rem; }
+.course-meta { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--gray-100); padding-top:1rem; }
+.course-price { font-weight:800; color:var(--navy); font-size:1.05rem; }
+.course-duration { font-size:0.75rem; color:var(--gray-400); display:flex; align-items:center; gap:0.35rem; }
+
+.footer { background:var(--navy); color:var(--gray-400); padding:4rem 3rem 2rem; }
+.footer-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.2fr; gap:3rem; }
+.footer-brand p { font-size:0.875rem; margin:1rem 0; max-width:280px; }
+.bee-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(61,181,75,0.15); color:var(--green-light); font-size:0.75rem; font-weight:600; padding:0.4rem 0.9rem; border-radius:100px; }
+.footer h4 { color:var(--white); font-size:0.9rem; margin-bottom:1.25rem; }
+.footer a { color:var(--gray-400); text-decoration:none; font-size:0.85rem; display:block; margin-bottom:0.6rem; }
+.footer a:hover { color:var(--green-light); }
+.footer-bottom { max-width:1200px; margin:3rem auto 0; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem; font-size:0.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+@media(max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr;} .section,.stats{padding-left:1.5rem;padding-right:1.5rem;} .hero{padding:140px 1.5rem 60px;} }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@ivyafrica.co.za"><i class="fas fa-envelope"></i> info@ivyafrica.co.za</a>
+    <a href="tel:+27514834567"><i class="fas fa-phone"></i> +27 51 483 4567</a>
+  </div>
+  <a href="contact.html">Get in Touch</a>
+</div>
+
+<header class="header" id="header">
+  <a href="index.html" class="logo"><img src="logo-color.png" alt="Ivy Africa" style="height:40px" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Ivy Africa</span></a>
+  <nav class="nav">
+    <a href="#pecb" class="nav-link">PECB Certifications</a>
+    <a href="#sace" class="nav-link">Educator Training</a>
+    <a href="contact.html" class="cta-btn">Get in Touch</a>
+  </nav>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><i class="fas fa-check-circle"></i> 100% Black Owned — BEE Level 1</div>
+    <h1>Technology Solutions &amp; Certifications <span>built for Africa.</span></h1>
+    <p>Internationally accredited PECB certifications and SACE-aligned educator development — delivered by certified instructors across Southern Africa since 2016.</p>
+    <div class="hero-actions">
+      <a href="#pecb" class="cta-btn">Browse Certifications</a>
+      <a href="#sace" class="btn-outline">Educator Training</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div class="fade-up"><div class="stat-num">8<span>+</span></div><div class="stat-label">Accredited Courses</div></div>
+    <div class="fade-up"><div class="stat-num">2016</div><div class="stat-label">Founded</div></div>
+    <div class="fade-up"><div class="stat-num">BEE<span> 1</span></div><div class="stat-label">Level 1 Certified</div></div>
+    <div class="fade-up"><div class="stat-num">100<span>%</span></div><div class="stat-label">Black Owned</div></div>
+  </div>
+</section>
+
+<section class="section alt" id="pecb">
+  <div class="section-inner">
+    <div class="section-tag">PECB Certifications</div>
+    <h2>Information Security &amp; Privacy Certifications</h2>
+    <p class="section-sub">Internationally accredited PECB courses with exam vouchers and certification guidance included. Instructor-led, standards-based, and built on real organisational case studies.</p>
+    <div class="course-grid">
+      <a href="pecb-iso-27002.html" class="course-card fade-up">
+        <div class="course-vendor">PECB</div>
+        <h3>ISO 27002 Manager</h3>
+        <p>Implement information security controls in line with ISO/IEC 27002 best practices.</p>
+        <div class="course-meta"><span class="course-price">R12,000</span><span class="course-duration"><i class="far fa-clock"></i> 3 Days</span></div>
+      </a>
+      <a href="pecb-iso-27005.html" class="course-card fade-up">
+        <div class="course-vendor">PECB</div>
+        <h3>ISO 27005 Risk Manager</h3>
+        <p>Perform information security risk assessments and manage risk in line with ISO/IEC 27005.</p>
+        <div class="course-meta"><span class="course-price">R12,000</span><span class="course-duration"><i class="far fa-clock"></i> 3 Days</span></div>
+      </a>
+      <a href="pecb-iso-27035.html" class="course-card fade-up">
+        <div class="course-vendor">PECB</div>
+        <h3>ISO 27035 Incident Manager</h3>
+        <p>Establish and manage an effective information security incident response capability.</p>
+        <div class="course-meta"><span class="course-price">R12,000</span><span class="course-duration"><i class="far fa-clock"></i> 3 Days</span></div>
+      </a>
+      <a href="pecb-iso-27400.html" class="course-card fade-up">
+        <div class="course-vendor">PECB</div>
+        <h3>ISO 27400 Privacy</h3>
+        <p>Privacy and personal data protection practices aligned to ISO/IEC 27400 guidance.</p>
+        <div class="course-meta"><span class="course-price">R12,000</span><span class="course-duration"><i class="far fa-clock"></i> 3 Days</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sace">
+  <div class="section-inner">
+    <div class="section-tag">SACE Aligned</div>
+    <h2>Educator Professional Development</h2>
+    <p class="section-sub">SACE-aligned courses earning professional development points — practical, classroom-ready training designed for South African curriculum contexts.</p>
+    <div class="course-grid">
+      <a href="sace-coding-robotics.html" class="course-card fade-up">
+        <div class="course-vendor">SACE Aligned</div>
+        <h3>Coding &amp; Robotics in Education</h3>
+        <p>Hands-on training to introduce coding and robotics concepts into the school curriculum.</p>
+        <div class="course-meta"><span class="course-price">R5,500</span><span class="course-duration"><i class="far fa-clock"></i> 4 Days</span></div>
+      </a>
+      <a href="sace-ict-integration.html" class="course-card fade-up">
+        <div class="course-vendor">SACE Aligned</div>
+        <h3>ICT Integration in the Classroom</h3>
+        <p>Practical strategies for integrating technology meaningfully into everyday classroom teaching.</p>
+        <div class="course-meta"><span class="course-price">R4,500</span><span class="course-duration"><i class="far fa-clock"></i> 3 Days</span></div>
+      </a>
+      <a href="sace-educator-development.html" class="course-card fade-up">
+        <div class="course-vendor">SACE Aligned</div>
+        <h3>Educator Professional Development</h3>
+        <p>SACE-aligned professional development to build modern teaching capacity and digital confidence.</p>
+        <div class="course-meta"><span class="course-price">R4,000</span><span class="course-duration"><i class="far fa-clock"></i> 3 Days</span></div>
+      </a>
+      <a href="sace-digital-literacy.html" class="course-card fade-up">
+        <div class="course-vendor">SACE Aligned</div>
+        <h3>Digital Literacy for Educators</h3>
+        <p>Core digital skills every educator needs to teach and work confidently in a digital classroom.</p>
+        <div class="course-meta"><span class="course-price">R3,000</span><span class="course-duration"><i class="far fa-clock"></i> 2 Days</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Ivy Africa" style="filter:brightness(0) invert(1);height:36px" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;color:var(--white)">Ivy Africa</span></a>
+      <p>Technology Solutions &amp; Certifications built for Africa.</p>
+      <div class="bee-badge"><i class="fas fa-check-circle"></i> 100% Black Owned — BEE Level 1</div>
+    </div>
+    <div>
+      <h4>Certifications</h4>
+      <a href="pecb-iso-27002.html">ISO 27002 Manager</a>
+      <a href="pecb-iso-27005.html">ISO 27005 Risk Manager</a>
+      <a href="pecb-iso-27035.html">ISO 27035 Incident Manager</a>
+      <a href="pecb-iso-27400.html">ISO 27400 Privacy</a>
+    </div>
+    <div>
+      <h4>Educator Training</h4>
+      <a href="sace-coding-robotics.html">Coding &amp; Robotics</a>
+      <a href="sace-ict-integration.html">ICT Integration</a>
+      <a href="sace-educator-development.html">Educator Development</a>
+      <a href="sace-digital-literacy.html">Digital Literacy</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:info@ivyafrica.co.za"><i class="fas fa-envelope"></i> info@ivyafrica.co.za</a>
+      <a href="tel:+27514834567"><i class="fas fa-phone"></i> +27 51 483 4567</a>
+      <a href="contact.html"><i class="fas fa-map-marker-alt"></i> Bloemfontein, Free State</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Ivy Africa. All rights reserved.</span>
+    <span>Built with ❤️ for Africa.</span>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

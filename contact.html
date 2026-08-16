@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Ivy Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root { --green:#3db54b; --green-light:#77cb81; --navy:#14487b; --orange:#ee8022; --white:#fff; --off-white:#f8fafc; --gray-100:#f1f5f9; --gray-200:#e2e8f0; --gray-400:#94a3b8; --gray-600:#475569; --gray-800:#1e293b; --expo:cubic-bezier(0.16,1,0.3,1); }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:var(--white); color:var(--gray-800); line-height:1.6; }
+.top-bar { position:fixed; top:0; left:0; right:0; height:40px; background:var(--navy); z-index:1001; display:flex; align-items:center; justify-content:space-between; padding:0 3rem; font-size:0.75rem; }
+.top-bar a { color:var(--gray-400); text-decoration:none; display:flex; align-items:center; gap:0.4rem; }
+.top-bar-left { display:flex; align-items:center; gap:1rem; }
+.header { position:fixed; top:40px; left:0; right:0; height:80px; background:var(--navy); z-index:1000; display:flex; align-items:center; justify-content:space-between; padding:0 3rem; }
+.logo { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
+.logo-text { font-size:1.5rem; font-weight:700; color:var(--white); }
+.nav { display:flex; align-items:center; gap:2.5rem; }
+.nav-link { color:var(--white); text-decoration:none; font-size:0.875rem; font-weight:500; }
+.cta-btn { background:var(--green); color:var(--white); padding:0.6rem 1.5rem; border-radius:100px; text-decoration:none; font-size:0.875rem; font-weight:600; border:none; cursor:pointer; display:inline-block; }
+.cta-btn:hover { background:var(--green-light); }
+@media(max-width:768px){ .top-bar{display:none;} .header{top:0;padding:0 1.5rem;} .nav .nav-link{display:none;} }
+.hero { background:var(--navy); padding:180px 3rem 70px; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; top:-20%; right:-10%; width:60%; height:80%; background:radial-gradient(circle, rgba(61,181,75,0.18) 0%, transparent 65%); }
+.hero-inner { max-width:1200px; margin:0 auto; position:relative; z-index:2; }
+.hero h1 { font-size:clamp(2rem,4.5vw,3rem); font-weight:800; color:var(--white); margin-bottom:0.75rem; }
+.hero p { color:var(--gray-400); max-width:560px; }
+.section { padding:4.5rem 3rem; }
+.section-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; }
+@media(max-width:900px){ .section-inner{grid-template-columns:1fr;} .section{padding:3rem 1.5rem;} .hero{padding:150px 1.5rem 60px;} }
+.contact-item { display:flex; gap:1rem; margin-bottom:1.75rem; align-items:flex-start; }
+.contact-icon { width:44px; height:44px; border-radius:12px; background:rgba(61,181,75,0.12); color:var(--green); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.contact-item h3 { font-size:0.95rem; color:var(--navy); margin-bottom:0.15rem; }
+.contact-item p, .contact-item a { font-size:0.875rem; color:var(--gray-600); text-decoration:none; }
+.contact-item a:hover { color:var(--green); }
+.form-card { background:var(--off-white); border:1px solid var(--gray-200); border-radius:20px; padding:2.5rem; }
+.form-card h2 { color:var(--navy); font-size:1.4rem; margin-bottom:0.5rem; }
+.form-card > p { color:var(--gray-600); font-size:0.9rem; margin-bottom:1.75rem; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+@media(max-width:600px){ .form-row{grid-template-columns:1fr;} }
+.field { margin-bottom:1.1rem; }
+.field label { display:block; font-size:0.8rem; font-weight:600; color:var(--navy); margin-bottom:0.35rem; }
+.field input, .field select, .field textarea { width:100%; padding:0.75rem 1rem; border:1px solid var(--gray-200); border-radius:10px; font-family:inherit; font-size:0.9rem; background:var(--white); }
+.field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:var(--green); box-shadow:0 0 0 3px rgba(61,181,75,0.15); }
+.form-note { font-size:0.75rem; color:var(--gray-400); margin-top:1rem; }
+.footer { background:var(--navy); color:var(--gray-400); padding:2.5rem 3rem; text-align:center; font-size:0.8rem; }
+.footer a { color:var(--gray-400); }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@ivyafrica.co.za"><i class="fas fa-envelope"></i> info@ivyafrica.co.za</a>
+    <a href="tel:+27514834567"><i class="fas fa-phone"></i> +27 51 483 4567</a>
+  </div>
+  <a href="index.html">Home</a>
+</div>
+
+<header class="header">
+  <a href="index.html" class="logo"><img src="logo-color.png" alt="Ivy Africa" style="height:40px" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Ivy Africa</span></a>
+  <nav class="nav">
+    <a href="index.html#pecb" class="nav-link">PECB Certifications</a>
+    <a href="index.html#sace" class="nav-link">Educator Training</a>
+    <a href="index.html" class="cta-btn">All Courses</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Get in Touch</h1>
+    <p>Enrol in a course, request a group quote, or ask us anything — we respond within one business day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <div><h3>Email</h3><a href="mailto:info@ivyafrica.co.za">info@ivyafrica.co.za</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+        <div><h3>Phone</h3><a href="tel:+27514834567">+27 51 483 4567</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div><h3>Address</h3><p>Bloemfontein, Free State, South Africa</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+        <div><h3>Office Hours</h3><p>Monday – Friday, 08:00 – 17:00 SAST</p></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <h2>Send us a message</h2>
+      <p>Tell us which course you're interested in and we'll come back with dates, pricing and enrolment details.</p>
+      <form action="mailto:info@ivyafrica.co.za" method="post" enctype="text/plain">
+        <div class="form-row">
+          <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+        </div>
+        <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel"></div>
+        <div class="field">
+          <label for="course">Course of interest</label>
+          <select id="course" name="course">
+            <option>General enquiry</option>
+            <optgroup label="PECB Certifications">
+              <option>ISO 27002 Manager</option>
+              <option>ISO 27005 Risk Manager</option>
+              <option>ISO 27035 Incident Manager</option>
+              <option>ISO 27400 Privacy</option>
+            </optgroup>
+            <optgroup label="SACE Educator Training">
+              <option>Coding &amp; Robotics in Education</option>
+              <option>ICT Integration in the Classroom</option>
+              <option>Educator Professional Development</option>
+              <option>Digital Literacy for Educators</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4"></textarea></div>
+        <button type="submit" class="cta-btn">Send Message</button>
+        <p class="form-note">This form opens your email client. You can also email us directly at info@ivyafrica.co.za.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  &copy; 2026 Ivy Africa. All rights reserved. · <a href="index.html">Home</a>
+</footer>
+
+</body>
+</html>
